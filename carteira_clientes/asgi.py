@@ -1,5 +1,5 @@
 """
-ASGI config for cadastro_clientes project.
+ASGI config for carteira_clientes project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cadastro_clientes.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'carteira_clientes.settings')
 
 application = get_asgi_application()

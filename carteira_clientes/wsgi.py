@@ -1,5 +1,5 @@
 """
-WSGI config for cadastro_clientes project.
+WSGI config for carteira_clientes project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'cadastro_clientes.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'carteira_clientes.settings')
 
 application = get_wsgi_application()
