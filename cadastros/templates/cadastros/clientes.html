@@ -7,8 +7,8 @@
 
     <p>Lista de clientes cadastrados</p>
 
-      <div class="tab_clientes">
-      {% if access_records %}
+      <div class="tabela">
+      {% if lista %}
           <table>
             <thead>
               <th>ID</th>
@@ -18,7 +18,7 @@
               <th>Longitude</th>
             </thead>
 
-            {% for acc in access_records %}
+            {% for acc in lista %}
               <tr>
                 <td>{{ acc.id }}</td>
                 <td>{{ acc.cnpj }}</td>
@@ -29,9 +29,28 @@
             {% endfor %}
         </table>
 
+        <div class="pagination">
+            <span class="step-links">
+                {% if lista.has_previous %}
+                    <a href="?page={{ lista.previous_page_number }}">Anterior</a>
+                {% endif %}
+
+                <span class="current">
+                    Página {{ lista.number }} de {{ lista.paginator.num_pages }}
+                </span>
+
+                {% if lista.has_next %}
+                    <a href="?page={{ lista.next_page_number }}">Próximo</a>
+                {% endif %}
+            </span>
+        </div>
+
       {% else %}
         <p>Não existem registros de clientes.</p>
       {% endif %}
+
+
+
 
     </div>
   </div>
