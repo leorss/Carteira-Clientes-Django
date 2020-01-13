@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, InvalidPage, EmptyPage
 def index(request):
     return render(request, 'cadastros/index.html')
 
-def vendedores(request):
+def Vendedores(request):
 
     lista = Vendedor.objects.order_by('id')
     paginator = Paginator(lista, 10) # Mostra 25 contatos por página
@@ -27,7 +27,7 @@ def vendedores(request):
     return render(None, 'cadastros/vendedores.html', {"lista":lista})
 
 
-def clientes(request):
+def Clientes(request):
 
     lista = Cliente.objects.order_by('id')
     paginator = Paginator(lista, 10) # Mostra 25 contatos por página
@@ -46,3 +46,22 @@ def clientes(request):
         lista = paginator.page(paginator.num_pages)
 
     return render(None, 'cadastros/clientes.html', {"lista":lista})
+
+
+def ClienteDetalhe(request, pk):
+    try:
+        detalhe = Cliente.objects.get(pk=pk)
+    except Cliente.DoesNotExist:
+        raise Http404('Id inválido')
+
+    return render(request, 'cadastros/clientes_detalhe.html', context={'detalhe': detalhe})
+
+
+def VendedorDetalhe(request, pk):
+    try:
+        detalhe = Vendedor.objects.get(pk=pk)
+    except Cliente.DoesNotExist:
+        raise Http404('Id inválido')
+
+    return render(request, 'cadastros/vendedores_detalhe.html', context={'detalhe': detalhe})
+

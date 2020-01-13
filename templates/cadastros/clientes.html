@@ -3,16 +3,15 @@
 
 <div class="container">
   <div class="jumbotron">
-    <h2>Cadastro Vendedores </h2>
+    <h2>Cadastro Clientes </h2>
 
-    <p>Lista de vendedores cadastrados</p>
-
-      <div class="tabelas">
+      <div class="tabela">
       {% if lista %}
+          <p>Lista de clientes cadastrados</p>
           <table>
             <thead>
               <th>ID</th>
-              <th>CPF</th>
+              <th>CNPJ</th>
               <th>Razão Social</th>
               <th>Latitude</th>
               <th>Longitude</th>
@@ -20,8 +19,8 @@
 
             {% for acc in lista %}
               <tr>
-                <td>{{ acc.id }}</td>
-                <td>{{ acc.cpf }}</td>
+                <td><a href="{{ clientes.get_absolute_url }} {{ acc.id }}">{{ acc.id }}</a> </td>
+                <td>{{ acc.cnpj }}</td>
                 <td>{{ acc.razao_social }}</td>
                 <td>{{ acc.latitude }}</td>
                 <td>{{ acc.longitude }}</td>
@@ -29,10 +28,10 @@
             {% endfor %}
         </table>
 
-         <div class="pagination">
+        <div class="pagination">
             <span class="step-links">
                 {% if lista.has_previous %}
-                    <a href="?page={{ lista.previous_page_number }}">Anterior</a>
+                    <a href="?page={{ lista.previous_page_number }}" >Anterior</a>
                 {% endif %}
 
                 <span class="current">
@@ -46,8 +45,11 @@
         </div>
 
       {% else %}
-        <p>Não existem registros de vendedores.</p>
+        <p>Não existem registros de clientes.</p>
       {% endif %}
+
+
+
 
     </div>
   </div>

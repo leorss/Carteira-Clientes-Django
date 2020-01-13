@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
     print("Populating the databases...Please Wait")
     print("Clientes...")
-    populate_clientes(20)
+    populate_clientes(10)
     print("Vendedores...")
-    populate_vendedores(20)
+    populate_vendedores(10)
     print('Populating Complete')

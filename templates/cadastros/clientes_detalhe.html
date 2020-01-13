@@ -1,0 +1,23 @@
+{% extends "cadastros/base.html" %}
+{% block body_block %}
+
+<div class="container">
+    <div class="jumbotron">
+        <div align="center">
+            <h3>Detalhe Cliente </h3><br>
+        </div>
+        <p><strong>ID:</strong> {{ detalhe.id }}</p>
+        <p><strong>CNPJ:</strong>  {{ detalhe.cnpj }}</p>
+        <p><strong>Razão Social:</strong> {{ detalhe.razao_social }}</p>
+        <p><strong>Latitude:</strong> {{ detalhe.latitude }}</p>
+        <p><strong>Longitude:</strong> {{ detalhe.longitude }}</p> <br>
+
+        <div align="right">
+            <a href="{% url 'cadastros:clientes' %}"><button type="button" class="btn btn-primary">Voltar</button></a>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

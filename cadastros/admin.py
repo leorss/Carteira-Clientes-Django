@@ -4,6 +4,7 @@ from .models import Cliente, Vendedor
 
 class ClienteAdmin(admin.ModelAdmin):
    list_display = ('id', 'cnpj', 'razao_social', 'latitude', 'longitude')
+   search_fields = ['id', 'cnpj', 'razao_social', 'latitude', 'longitude']
    fieldsets = (
        ('Dados', {
            'fields': ('cnpj', 'razao_social')
@@ -14,8 +15,10 @@ class ClienteAdmin(admin.ModelAdmin):
    )
 
 
+
 class VendedorAdmin(admin.ModelAdmin):
    list_display = ('id', 'cpf', 'razao_social', 'latitude', 'longitude')
+   search_fields = ['id', 'cpf', 'razao_social', 'latitude', 'longitude']
    fieldsets = (
        ('Dados', {
            'fields': ('cpf', 'razao_social')
@@ -24,7 +27,6 @@ class VendedorAdmin(admin.ModelAdmin):
            'fields': ('latitude', 'longitude')
        }),
    )
-
 
 
 

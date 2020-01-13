@@ -6,6 +6,8 @@ class Cliente(models.Model):
     razao_social = models.CharField(max_length=40)
     latitude = models.CharField(max_length=12)
     longitude = models.CharField(max_length=12)
+    class Meta:
+        db_table = 'Clientes'
 
 
 class Vendedor(models.Model):
@@ -13,3 +15,5 @@ class Vendedor(models.Model):
     razao_social = models.CharField(max_length=40)
     latitude = models.CharField(max_length=12)
     longitude = models.CharField(max_length=12)
+    class Meta:
+        db_table = 'Vendedores'
