@@ -3,16 +3,51 @@
 
 <div class="container">
     <div class="jumbotron">
-        <div align="center">
-            <h3>Detalhe Cliente </h3><br>
-        </div>
-        <p><strong>ID:</strong> {{ detalhe.id }}</p>
-        <p><strong>CNPJ:</strong>  {{ detalhe.cnpj }}</p>
-        <p><strong>Razão Social:</strong> {{ detalhe.razao_social }}</p>
-        <p><strong>Latitude:</strong> {{ detalhe.latitude }}</p>
-        <p><strong>Longitude:</strong> {{ detalhe.longitude }}</p> <br>
+        <h3>Detalhe Cliente </h3><br>
+        <form action="">
+
+            <div class="row">
+                <div class="form-group">
+                  <label class="control-label col-sm-2">ID:</label>
+                  <div class="col-sm-10">
+                    <input class="form-control" id="id" placeholder="{{ detalhe.id }}" name="id" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label col-sm-2">CNPJ:</label>
+                  <div class="col-sm-12">
+                    <input class="form-control" id="cnpj" placeholder="{{ detalhe.cnpj }}" name="cnpj" disabled>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+              <label class="control-label col-sm-2">Razão Social:</label>
+              <div class="col-sm-10">
+                <input class="form-control" id="razao" placeholder="{{ detalhe.razao_social }}" name="razao">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-2">Latitude:</label>
+              <div class="col-sm-10">
+                <input class="form-control" id="latitude" placeholder="{{ detalhe.latitude }}" name="latitude">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-2">Longitude:</label>
+              <div class="col-sm-10">
+                <input class="form-control" id="latitude" placeholder="{{ detalhe.longitude }}" name="latitude">
+              </div>
+            </div>
+
+        </form>
 
         <div align="right">
+            <a href="{% url 'cadastros:clientes' %}"><button type="button" class="btn btn-primary">Alterar</button></a>
+            <a href="{% url 'cadastros:clientes' %}"><button type="button" class="btn btn-primary">Apagar</button></a>
             <a href="{% url 'cadastros:clientes' %}"><button type="button" class="btn btn-primary">Voltar</button></a>
         </div>
 

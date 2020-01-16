@@ -28,21 +28,7 @@
             {% endfor %}
         </table>
 
-         <div class="pagination">
-            <span class="step-links">
-                {% if lista.has_previous %}
-                    <a href="?page={{ lista.previous_page_number }}">Anterior</a>
-                {% endif %}
-
-                <span class="current">
-                    Página {{ lista.number }} de {{ lista.paginator.num_pages }}
-                </span>
-
-                {% if lista.has_next %}
-                    <a href="?page={{ lista.next_page_number }}">Próximo</a>
-                {% endif %}
-            </span>
-        </div>
+        {% include "cadastros/paginacao.html" %}
 
       {% else %}
         <p>Não existem registros de vendedores.</p>
