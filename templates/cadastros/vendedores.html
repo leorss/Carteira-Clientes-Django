@@ -3,11 +3,15 @@
 
 <div class="container">
   <div class="jumbotron">
-    <h2>Cadastro Vendedores </h2>
+
+      <div align="left">
+        <a href="{% url 'cadastros:adicionar-vendedor' %}">
+            <br><button type="button" class="btn btn-success">Adicionar</button><br><br>
+        </a>
+      </div>
 
       <div class="tabelas">
       {% if lista %}
-          <p>Lista de vendedores cadastrados</p>
           <table>
             <thead>
               <th>ID</th>
@@ -19,7 +23,7 @@
 
             {% for acc in lista %}
               <tr>
-                <td><a href="{{ clientes.get_absolute_url }} {{ acc.id }}">{{ acc.id }}</a></td>
+                <td><a href="{{ vendedores.get_absolute_url }} {{ acc.id }}">{{ acc.id }}</a></td>
                 <td>{{ acc.cpf }}</td>
                 <td>{{ acc.razao_social }}</td>
                 <td>{{ acc.latitude }}</td>

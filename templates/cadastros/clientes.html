@@ -1,11 +1,11 @@
 {% include "cadastros/base.html" with active_tab='clientes' %}
-{% block body_block %}
 
 <div class="container">
   <div class="jumbotron">
-      <h2>Cadastro Clientes </h2>
-      <div align="right">
-        <button type="button" class="btn btn-success">Adicionar</button>
+      <div align="left">
+        <a href="{% url 'cadastros:adicionar-cliente' %}">
+            <br><button type="button" class="btn btn-success">Adicionar</button><br><br>
+        </a>
       </div>
       <div class="tabela">
       {% if lista %}
@@ -35,11 +35,6 @@
         <p>Não existem registros de clientes.</p>
       {% endif %}
 
-
-
-
     </div>
   </div>
 </div>
-
-{% endblock %}

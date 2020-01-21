@@ -17,3 +17,5 @@ class Vendedor(models.Model):
     longitude = models.CharField(max_length=12)
     class Meta:
         db_table = 'Vendedores'
+
+

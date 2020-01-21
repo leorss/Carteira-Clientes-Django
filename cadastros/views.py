@@ -1,7 +1,13 @@
 from django.shortcuts import render
-from .models import Cliente, Vendedor
-from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.shortcuts import get_object_or_404
+from django.core.paginator import Paginator
+from django.core.paginator import InvalidPage
+from django.core.paginator import EmptyPage
 
+from .models import Cliente
+from .models import Vendedor
+from .forms import AdicionarCliente
+from .forms import AdicionarVendedor
 
 def index(request):
     return render(request, 'cadastros/index.html')
@@ -57,7 +63,7 @@ def ClienteDetalhe(request, pk):
     except Cliente.DoesNotExist:
         raise Http404('Id inválido')
 
-    return render(request, 'cadastros/clientes_detalhe.html', context={'detalhe': detalhe})
+    return render(request, 'cadastros/detalhe_clientes.html', context={'detalhe': detalhe})
 
 def VendedorDetalhe(request, pk):
     try:
@@ -65,5 +71,46 @@ def VendedorDetalhe(request, pk):
     except Cliente.DoesNotExist:
         raise Http404('Id inválido')
 
-    return render(request, 'cadastros/vendedores_detalhe.html', context={'detalhe': detalhe})
+    return render(request, 'cadastros/detalhe_vendedores.html', context={'detalhe': detalhe})
 
+def adicionarCliente(request):
+    form = AdicionarCliente()
+
+    if request.method == "POST":
+        form = AdicionarCliente(request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return Clientes(request)
+        else:
+            print('Erro ao adicionar cliente')
+
+    return render(request,'cadastros/adicionar_cliente.html',{'form':form})
+
+
+def adicionarVendedor(request):
+    form = AdicionarVendedor()
+
+    if request.method == "POST":
+        form = AdicionarVendedor(request.POST)
+        if form.is_valid():
+            form.save(commit=True)
+            return Vendedores(request)
+        else:
+            print('Erro ao adicionar vendedor')
+
+    return render(request,'cadastros/adicionar_vendedor.html',{'form':form})
+
+def apagarCliente(request, pk):
+    post = get_object_or_404(Clientes, pk=id)
+    post.delete()
+    return Clientes(request)
+
+def apagarVendedor(request, pk):
+    post = get_object_or_404(Vendedores, pk=id)
+    post.delete()
+    return Vendedores(request)
+
+def editalCliente(Cliente, id):
+    post = get_object_or_404(Cliente, pk=id)
+    post.delete()
+    return redirect('blog:post_list')

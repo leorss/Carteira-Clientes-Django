@@ -1,0 +1,35 @@
+{% load crispy_forms_tags %}
+
+</head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <form method="POST">
+            <br>
+
+            <div class="col-sm-3">
+                {% if active_tab == 'clientes' %}   {{ form.cnpj|as_crispy_field }} {% endif %}
+                {% if active_tab == 'vendedores' %} {{ form.cpf|as_crispy_field }}  {% endif %}
+            </div>
+
+            <div class="col-sm-10">
+                {{ form.razao_social|as_crispy_field }}
+            </div>
+
+            <div class="col-sm-3">
+                {{ form.latitude|as_crispy_field }}
+            </div>
+            <div class="col-sm-3">
+                {{ form.longitude|as_crispy_field }}
+            </div>
+
+            {% csrf_token %}
+            <br>
+
+            <div align="right">
+                <input type="submit" class='btn btn-primary' value="Gravar">
+            </div>
+        </form>
+      </div>
+    </div>
+  </body>
