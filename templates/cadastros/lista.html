@@ -1,0 +1,85 @@
+
+<body>
+    <div class="container">
+      <div class="jumbotron">
+          {% if active_tab == 'cliente' %}
+          <div align="left">
+            <a href="{% url 'cadastros:adicionar-cliente' %}">
+                <br><button type="button" class="btn btn-success">Adicionar Cliente</button><br><br>
+            </a>
+          </div>
+          {% else %}
+          <div align="left">
+            <a href="{% url 'cadastros:adicionar-vendedor' %}">
+                <br><button type="button" class="btn btn-success">Adicionar Vendedor</button><br><br>
+            </a>
+          </div>
+          {% endif %}
+          <div class="tabela">
+          {% if lista %}
+              <table>
+                <thead>
+                  <th>ID</th>
+                  {% if active_tab == 'cliente' %}
+                  <th>CNPJ</th>
+                  {% else %}
+                  <th>CPF</th>
+                  {% endif %}
+                  <th>Razão Social</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                  <th> </th>
+                </thead>
+
+                {% for acc in lista %}
+                  <tr>
+                    <td>{{ acc.id }} </td>
+                    {% if active_tab == 'cliente' %}
+                    <td>{{ acc.cnpj }}</td>
+                    {% else %}
+                    <td>{{ acc.cpf }}</td>
+                    {% endif %}
+                    <td>{{ acc.razao_social }}</td>
+                    <td>{{ acc.latitude }}</td>
+                    <td>{{ acc.longitude }}</td>
+                    <td>
+                        <div align="center">
+                            <a href="editar/{{ acc.id }}"><button type="button" class="btn btn-warning">Editar</button></a>
+                            <a href="apagar/{{ acc.id }}"><button type="button" class="btn btn-danger">Apagar</button></a>
+                        </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+            </table>
+
+            <br><br>
+            <div class="pagination justify-content-center">
+                <a class="step-links">
+                    {% if lista.has_previous %}
+                        <a class="page-link"  href="?page=1" ><< </a>
+                        <a class="page-link"  href="?page={{ lista.previous_page_number }}" >< </a>
+                    {% endif %}
+
+                    {% if lista.paginator.num_pages != 1 %}
+                        {% for i in lista.paginator.page_range %}
+                            <li class="page-item {%if lista.number == i %} active {% endif %}">
+                                <a class="page-link" href="?page={{ i }}">{{i}}</a>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if lista.has_next %}
+                        <a class="page-link"  href="?page={{ lista.next_page_number }}">></a>
+                        <a class="page-link"  href="?page={{ lista.end_index }}" >>> </a>
+                    {% endif %}
+                </span>
+            </div>
+
+          {% else %}
+            <p>Não existem registros.</p>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+</body>

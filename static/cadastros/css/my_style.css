@@ -1,12 +1,11 @@
 table {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  border: 2px solid white;
   width: 100%;
 }
 
 th, td {
-  border: 1px solid #ddd;
+
   padding: 8px;
 }
 
@@ -31,4 +30,15 @@ tr:hover {
 
 a:link{
   color: #495057;
+}
+
+/* login */
+
+.auth-card {
+    margin-bottom: 30px;
+}
+
+.change-form-p {
+    margin-top: 30px;
+    text-align: center;
 }
