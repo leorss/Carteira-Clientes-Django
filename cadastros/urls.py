@@ -4,12 +4,12 @@ from . import views
 app_name = 'cadastros'
 
 urlpatterns = [
-    path('clientes/', views.Clientes, name='clientes'),
-    path('vendedores/', views.Vendedores, name='vendedores'),
-    path('clientes/<int:pk>/', views.ClienteDetalhe, name='detalhe-cliente'),
-    path('vendedores/<int:pk>/', views.VendedorDetalhe, name='detalhe-vendedor'),
-    path('clientes/adicionar/', views.adicionarCliente, name='adicionar-cliente'),
-    path('vendedores/adicionar/', views.adicionarVendedor, name='adicionar-vendedor'),
-    path('clientes/apagar/<int:pk>/', views.apagarCliente, name='apagar-cliente'),
-    path('vendedores/apagar/<int:pk>/', views.apagarVendedor, name='apagar-vendedor'),
+    path('cliente/', views.listaCliente, name='lista-cliente'),
+    path('vendedor/', views.listaVendedor, name='lista-vendedor'),
+    path('cliente/adicionar/', views.adicionarCliente, name='adicionar-cliente'),
+    path('vendedor/adicionar/', views.adicionarVendedor, name='adicionar-vendedor'),
+    path('cliente/editar/<int:pk>/', views.editarCliente, name='editar-cliente'),
+    path('vendedor/editar/<int:pk>/', views.editarVendedor, name='editar-vendedor'),
+    path('cliente/apagar/<int:pk>/', views.apagarCliente, name='apagar-cliente'),
+    path('vendedor/apagar/<int:pk>/', views.apagarVendedor, name='apagar-vendedor'),
 ]

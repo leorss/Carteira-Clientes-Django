@@ -4,11 +4,13 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <form method="POST">
+        <form action="."  method="POST">
             <br>
 
+            {% csrf_token %}
+
             <div class="col-sm-3">
-                {% if active_tab == 'cliente' %} {{ form.cnpj|as_crispy_field }} {% endif %}
+                {% if active_tab == 'cliente' %}  {{ form.cnpj|as_crispy_field }} {% endif %}
                 {% if active_tab == 'vendedor' %} {{ form.cpf|as_crispy_field }}  {% endif %}
             </div>
 
@@ -23,13 +25,13 @@
                 {{ form.longitude|as_crispy_field }}
             </div>
 
-            {% csrf_token %}
             <br>
 
             <div align="right">
-                <input type="submit" class='btn btn-primary' value="Gravar">
+                <input type="submit" class='btn btn-secondary' value="Editar">
             </div>
         </form>
+
       </div>
     </div>
   </body>
