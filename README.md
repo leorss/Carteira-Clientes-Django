@@ -11,7 +11,7 @@
 <img src="./static/cadastros/images/login.jpg">
 
 <h2> Tela Clientes </h2>
-<img src="../static/cadastros/images/cliente.jpg">
+<img src="./static/cadastros/images/cliente.jpg">
 
 <h2> Tela Vendedores </h2>
 <img src="./static/cadastros/images/vendedor.jpg">
