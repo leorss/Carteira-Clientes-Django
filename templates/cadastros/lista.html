@@ -15,6 +15,13 @@
             </a>
           </div>
           {% endif %}
+          <div align="right">
+              <form class="form-inline my-2 my-lg-0" >
+                <input class="form-control mr-sm-2" name="q" type="search" placeholder="Busca" aria-label="Search" value='{{request.GET.q}}'>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+              </form>
+          </div>
+          <br>
           <div class="tabela">
           {% if lista %}
               <table>
@@ -56,21 +63,19 @@
             <div class="pagination justify-content-center">
                 <a class="step-links">
                     {% if lista.has_previous %}
-                        <a class="page-link"  href="?page=1" ><< </a>
-                        <a class="page-link"  href="?page={{ lista.previous_page_number }}" >< </a>
+                        <a class="page-link"  href="?page=1{% if request.GET.q %}&q={{request.GET.q}} {% endif %}" ><< </a>
+                        <a class="page-link"  href="?page={{ lista.previous_page_number }}{% if request.GET.q %}&q={{request.GET.q}} {% endif %}" >< </a>
                     {% endif %}
 
                     {% if lista.paginator.num_pages != 1 %}
-                        {% for i in lista.paginator.page_range %}
-                            <li class="page-item {%if lista.number == i %} active {% endif %}">
-                                <a class="page-link" href="?page={{ i }}">{{i}}</a>
-                            </li>
-                        {% endfor %}
+
+                    <a class="page-link active">{{ lista.number}} / {{lista.paginator.num_pages}}</a>
+
                     {% endif %}
 
                     {% if lista.has_next %}
-                        <a class="page-link"  href="?page={{ lista.next_page_number }}">></a>
-                        <a class="page-link"  href="?page={{ lista.end_index }}" >>> </a>
+                        <a class="page-link"  href="?page={{ lista.next_page_number }}{% if request.GET.q %}&q={{request.GET.q}} {% endif %}">></a>
+                        <a class="page-link"  href="?page={{ lista.paginator.num_pages }}{% if request.GET.q %}&q={{request.GET.q}} {% endif %}" >>> </a>
                     {% endif %}
                 </span>
             </div>

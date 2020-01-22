@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
+from django.db.models import Q
 from django.core.paginator import Paginator
 from django.core.paginator import InvalidPage
 from django.core.paginator import EmptyPage
@@ -22,7 +23,16 @@ def Http404(request, msg):
 @login_required
 def listaCliente(request):
     lista = Cliente.objects.order_by('id')
-    paginator = Paginator(lista, 5) # Mostra 25 contatos por página
+
+    query = request.GET.get("q")
+    if query:
+        lista = lista.filter(
+            Q(id__icontains=query) |
+            Q(cnpj__icontains=query) |
+            Q(razao_social__icontains=query)
+            ).distinct()
+
+    paginator = Paginator(lista, 10) # Mostra 10 contatos por página
 
     # Make sure page request is an int. If not, deliver first page.
     # Esteja certo de que o `page request` é um inteiro. Se não, mostre a primeira página.
@@ -43,7 +53,16 @@ def listaCliente(request):
 @login_required
 def listaVendedor(request):
     lista = Vendedor.objects.order_by('id')
-    paginator = Paginator(lista, 5) # Mostra 25 contatos por página
+
+    query = request.GET.get("q")
+    if query:
+        lista = lista.filter(
+            Q(id__icontains=query) |
+            Q(cpf__icontains=query) |
+            Q(razao_social__icontains=query)
+            ).distinct()
+
+    paginator = Paginator(lista, 10) # Mostra 10 contatos por página
 
     # Make sure page request is an int. If not, deliver first page.
     # Esteja certo de que o `page request` é um inteiro. Se não, mostre a primeira página.
