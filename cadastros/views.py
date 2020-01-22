@@ -32,7 +32,7 @@ def listaCliente(request):
             Q(razao_social__icontains=query)
             ).distinct()
 
-    paginator = Paginator(lista, 10) # Mostra 10 contatos por página
+    paginator = Paginator(lista, 5) # Mostra 5 contatos por página
 
     # Make sure page request is an int. If not, deliver first page.
     # Esteja certo de que o `page request` é um inteiro. Se não, mostre a primeira página.
@@ -62,7 +62,7 @@ def listaVendedor(request):
             Q(razao_social__icontains=query)
             ).distinct()
 
-    paginator = Paginator(lista, 10) # Mostra 10 contatos por página
+    paginator = Paginator(lista, 5) # Mostra 5 contatos por página
 
     # Make sure page request is an int. If not, deliver first page.
     # Esteja certo de que o `page request` é um inteiro. Se não, mostre a primeira página.
