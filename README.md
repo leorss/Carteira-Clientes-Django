@@ -11,7 +11,7 @@
 <img src="./static/cadastros/images/login.jpg">
 
 <h2> Tela Bem-vindo(a) </h2>
-<img src="./static/cadastros/images/benvindo.jpg">
+<img src="./static/cadastros/images/benvido.jpg">
 
 <h2> Tela Clientes </h2>
 <img src="./static/cadastros/images/cliente.jpg">
