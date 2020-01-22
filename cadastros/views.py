@@ -11,7 +11,7 @@ from .models import Vendedor
 from .forms import ClienteForm
 from .forms import VendedorForm
 
-@login_required
+
 def index(request):
     return render(request, 'cadastros/index.html')
 
