@@ -1,2 +1,4 @@
-{% include "cadastros/base.html" with active_tab='vendedor' %}
+{% extends "cadastros/base.html" %}
+{% block body_block %}
 {% include "cadastros/adicionar.html" with active_tab='vendedor' %}
+{% endblock %}

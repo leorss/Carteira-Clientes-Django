@@ -1,2 +1,4 @@
-{% include "cadastros/base.html"  with active_tab='cliente' %}
+{% extends "cadastros/base.html" %}
+{% block body_block %}
 {% include "cadastros/lista.html" with active_tab='cliente' %}
+{% endblock %}

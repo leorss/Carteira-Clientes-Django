@@ -6,6 +6,14 @@
         <form action="."  method="POST">
             <br>
 
+            <br>
+            {% if active_tab == 'cliente' %}
+            <h3>Editar cliente</h3>
+            {% else %}
+            <h3>Editar vendedor</h3>
+            {% endif %}
+            <br>
+
             {% csrf_token %}
 
             <div class="col-sm-3">
