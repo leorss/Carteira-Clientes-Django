@@ -8,12 +8,12 @@
 <br>
 
 <h2> Tela Login </h2>
-<img src="./images/login.jpg">
+<img src="./static/cadastros/images/login.jpg">
 
 <h2> Tela Clientes </h2>
-<img src="./images/cliente.jpg">
+<img src="../static/cadastros/images/cliente.jpg">
 
 <h2> Tela Vendedores </h2>
-<img src="./images/vendedor.jpg">
+<img src="./static/cadastros/images/vendedor.jpg">
 
 
