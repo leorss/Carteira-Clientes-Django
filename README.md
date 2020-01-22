@@ -1,5 +1,5 @@
 <div>
-  <img align="left" width="200" height="200" src="./images/cerveja.png">
+  <img align="left" width="200" height="200" src="./static/cadastros/images/cerveja.png">
   <h1 align="center"> Distribuição carteira de clientes para novos vendedores </h1>
   <p> Este sistema tem por objetivo gerenciar distribuir a carteira de clientes para os novos vendedores de acordo com a geolocalização. </p> 
 </div>
