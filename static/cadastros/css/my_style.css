@@ -15,7 +15,6 @@ th{
   text-align: left;
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
   background-color: #007bff;
   color: white;
 }
@@ -41,4 +40,9 @@ a:link{
 .change-form-p {
     margin-top: 30px;
     text-align: center;
+}
+
+.page-link{
+  color: #495057;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }

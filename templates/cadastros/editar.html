@@ -1,11 +1,11 @@
 {% load crispy_forms_tags %}
+{% load static %}
 
 <body>
     <div class="container">
       <div class="jumbotron">
         <form action="."  method="POST">
             <br>
-
             <br>
             {% if active_tab == 'cliente' %}
             <h3>Editar cliente</h3>
@@ -32,10 +32,13 @@
                 {{ form.longitude|as_crispy_field }}
             </div>
 
-            <br>
+	        <div id="map">
+                <script src="{% static 'cadastros/js/script.js' %}"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+            </div>
 
             <div align="right">
-                <input type="submit" class='btn btn-secondary' value="Editar">
+                <input type="submit" class='btn btn-info' value="Editar">
             </div>
         </form>
       </div>

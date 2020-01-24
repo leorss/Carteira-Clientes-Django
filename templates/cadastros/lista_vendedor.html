@@ -1,4 +1,56 @@
 {% extends "cadastros/base.html" %}
 {% block body_block %}
-{% include "cadastros/lista.html" with active_tab='vendedor' %}
+
+<body>
+    <div class="container">
+      <div class="jumbotron">
+          <div align="left">
+            <a href="{% url 'cadastros:adicionar-vendedor' %}">
+                <br><button type="button" class="btn btn-success">Adicionar Vendedor</button><br><br>
+            </a>
+          </div>
+          <div align="right">
+              <form action="{% url 'cadastros:lista-vendedor'%}" class="form-inline my-2 my-lg-0" >
+                <input class="form-control mr-sm-2" name="q" type="search" placeholder="Busca" aria-label="Search" value='{{request.GET.q}}'>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+              </form>
+          </div>
+          <br>
+          <div class="tabela">
+          {% if lista %}
+              <table>
+                <thead>
+                  <th>ID</th>
+                  <th>CPF</th>
+                  <th>Razão Social</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                  <th>Opções </th>
+                </thead>
+                {% for acc in lista %}
+                  <tr>
+                    <td>{{ acc.id }} </td>
+                    <td>{{ acc.cpf }}</td>
+                    <td>{{ acc.razao_social }}</td>
+                    <td>{{ acc.latitude }}</td>
+                    <td>{{ acc.longitude }}</td>
+                    <td>
+                        <div align="left">
+                            <a href="{% url 'cadastros:editar-vendedor' acc.id %}"> <button type="button" class="btn btn-info">Editar</button></a>
+                            <a href="{% url 'cadastros:apagar-vendedor' acc.id %}"> <button type="button" class="btn btn-danger">Apagar</button></a>
+                        </div>
+                    </td>
+                  </tr>
+                {% endfor %}
+            </table>
+            {% include "cadastros/paginacao.html" %}
+          {% else %}
+            <p>Não existem registros.</p>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+</body>
+
 {% endblock %}

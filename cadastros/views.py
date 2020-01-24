@@ -5,11 +5,29 @@ from django.db.models import Q
 from django.core.paginator import Paginator
 from django.core.paginator import InvalidPage
 from django.core.paginator import EmptyPage
-
 from .models import Cliente
 from .models import Vendedor
 from .forms import ClienteForm
 from .forms import VendedorForm
+import math
+
+def calc_dist(lat1, lon1, lat2, lon2):
+	# covert degrees to radians
+	lat1 = math.radians(lat1)
+	lon1 = math.radians(lon1)
+	lat2 = math.radians(lat2)
+	lon2 = math.radians(lon2)
+
+	# get the differences
+	delta_lat = lat2 - lat1
+	delta_lon = lon2 - lon1
+
+	a = ((math.sin(delta_lat/2))**2) + math.cos(lat1)*math.cos(lat2)*((math.sin(delta_lon/2))**2)
+	c = 2 * math.atan2(a**0.5, (1-a)**0.5)
+	# earth's radius in km
+	earth_radius = 6371
+	# return distance in miles
+	return earth_radius * c
 
 
 def index(request):
