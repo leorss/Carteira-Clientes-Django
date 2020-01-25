@@ -1,0 +1,9 @@
+     {% if total == 0 %}
+            <p class="text-right"> Não existem registros.</p>
+     {% else %}
+        {% if total == 1 %}
+            <p class="text-right"> Foi encontrado <b><em> {{ total }} </em></b> registro. </p>
+        {% else %}
+            <p class="text-right"> Foram encontrados <b><em> {{ total }} </em></b> registros. </p>
+        {% endif %}
+     {% endif %}

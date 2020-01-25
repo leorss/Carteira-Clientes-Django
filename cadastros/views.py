@@ -1,14 +1,9 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
-from django.shortcuts import get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
-from django.core.paginator import Paginator
-from django.core.paginator import InvalidPage
-from django.core.paginator import EmptyPage
-from .models import Cliente
-from .models import Vendedor
-from .forms import ClienteForm
-from .forms import VendedorForm
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from .models import Cliente, Vendedor
+from .forms import ClienteForm, VendedorForm
 import math
 
 def calc_dist(lat1, lon1, lat2, lon2):
@@ -32,10 +27,6 @@ def calc_dist(lat1, lon1, lat2, lon2):
 
 def index(request):
     return render(request, 'cadastros/index.html')
-
-
-def Http404(request, msg):
-    return render(request, 'cadastros/404.html')
 
 
 @login_required
