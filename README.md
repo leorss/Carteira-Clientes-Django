@@ -8,15 +8,15 @@
 <br>
 
 <h2> Tela Login </h2>
-<img src="./static/cadastros/images/login.jpg">
+<img src="./static/cadastros/images/snapshots/login.jpg">
 
 <h2> Tela Bem-vindo(a) </h2>
-<img src="./static/cadastros/images/benvido.jpg">
+<img src="./static/cadastros/images/snapshots/bem-vindo.jpg">
 
 <h2> Tela Clientes </h2>
-<img src="./static/cadastros/images/cliente.jpg">
+<img src="./static/cadastros/images/snapshots/cliente.jpg">
 
 <h2> Tela Vendedores </h2>
-<img src="./static/cadastros/images/vendedor.jpg">
+<img src="./static/cadastros/images/snapshots/vendedor.jpg">
 
 

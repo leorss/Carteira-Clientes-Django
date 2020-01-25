@@ -65,7 +65,8 @@ def listaCliente(request):
     except (EmptyPage, InvalidPage):
         lista = paginator.page(paginator.num_pages)
 
-    return render(request, 'cadastros/lista_cliente.html', {"lista":lista})
+    total = paginator.count
+    return render(request, 'cadastros/lista_cliente.html', {"lista":lista, "total": total})
 
 
 @login_required
@@ -95,8 +96,8 @@ def listaVendedor(request):
     except (EmptyPage, InvalidPage):
         lista = paginator.page(paginator.num_pages)
 
-    return render(request, 'cadastros/lista_vendedor.html', {"lista":lista})
-
+    total = paginator.count
+    return render(request, 'cadastros/lista_vendedor.html', {"lista":lista, "total": total})
 
 @login_required
 def adicionarCliente(request):

@@ -4,18 +4,21 @@
 <body>
     <div class="container">
       <div class="jumbotron">
-          <div align="left">
-            <a href="{% url 'cadastros:adicionar-vendedor' %}">
-                <br><button type="button" class="btn btn-success">Adicionar Vendedor</button><br><br>
-            </a>
+          <div class="row">
+               <div class="col-auto mr-auto">
+                    <a href="{% url 'cadastros:adicionar-vendedor' %}">
+                        <br><button type="button" class="btn btn-success">Adicionar Vendedor</button><br><br>
+                    </a>
+               </div>
+               <div class="col-auto">
+                   <br>
+                  <form action="{% url 'cadastros:lista-vendedor'%}" class="form-inline my-2 my-lg-0" >
+                    <input class="form-control mr-sm-2" name="q" type="search" placeholder="Busca" aria-label="Search" value='{{request.GET.q}}'>
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                  </form>
+              </div>
           </div>
-          <div align="right">
-              <form action="{% url 'cadastros:lista-vendedor'%}" class="form-inline my-2 my-lg-0" >
-                <input class="form-control mr-sm-2" name="q" type="search" placeholder="Busca" aria-label="Search" value='{{request.GET.q}}'>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-              </form>
-          </div>
-          <br>
+
           <div class="tabela">
           {% if lista %}
               <table>
@@ -43,10 +46,9 @@
                   </tr>
                 {% endfor %}
             </table>
-            {% include "cadastros/paginacao.html" %}
-          {% else %}
-            <p>Não existem registros.</p>
           {% endif %}
+
+          {% include "cadastros/paginacao.html" %}
 
         </div>
       </div>
