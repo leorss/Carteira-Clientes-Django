@@ -32,7 +32,6 @@ def index(request):
 @login_required
 def listaCliente(request):
     lista = Cliente.objects.order_by('id')
-
     query = request.GET.get("q")
     if query:
         lista = lista.filter(

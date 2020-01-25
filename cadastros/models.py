@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Vendedor(models.Model):
     cpf = models.CharField(max_length=18)
     razao_social = models.CharField(max_length=40)
@@ -17,3 +16,4 @@ class Cliente(models.Model):
     longitude = models.CharField(max_length=12)
     class Meta:
         db_table = 'Clientes'
+

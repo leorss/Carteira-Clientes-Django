@@ -26,8 +26,8 @@
               <th>ID</th>
               <th>CNPJ</th>
               <th>Razão Social</th>
-              <th>Vendedor</th>
-              <th>Distancia</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
               <th>Opções </th>
             </thead>
             {% for acc in lista %}
@@ -35,11 +35,11 @@
                 <td>{{ acc.id }} </td>
                 <td>{{ acc.cnpj }}</td>
                 <td>{{ acc.razao_social }}</td>
-                <td>{{ acc.vendedor }}</td>
-                <td>{{ acc.distancia }}</td>
+                <td>{{ acc.latitude }}</td>
+                <td>{{ acc.longitude  }}</td>
                 <td>
                     <a href="{% url 'cadastros:editar-cliente' acc.id %}"> <button type="button" class="btn btn-info">Editar</button></a>
-                    <a href="{% url 'cadastros:apagar-cliente' acc.id %}"> <button type="button" class="btn btn-danger">Apagar</button></a>
+                    <a href="{% url 'cadastros:apagar-cliente' acc.id %}"> <button type="button" class="btn btn-danger">Remover</button></a>
                 </td>
               </tr>
             {% endfor %}

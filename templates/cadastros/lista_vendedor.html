@@ -39,7 +39,7 @@
                 <td>{{ acc.longitude }}</td>
                 <td>
                     <a href="{% url 'cadastros:editar-vendedor' acc.id %}"> <button type="button" class="btn btn-info">Editar</button></a>
-                    <a href="{% url 'cadastros:apagar-vendedor' acc.id %}"> <button type="button" class="btn btn-danger">Apagar</button></a>
+                    <a href="{% url 'cadastros:apagar-vendedor' acc.id %}"> <button type="button" class="btn btn-danger">Remover</button></a>
                 </td>
               </tr>
             {% endfor %}

@@ -34,6 +34,11 @@
 
             <div align="right">
                 <input type="submit" class='btn btn-primary' value="Gravar">
+                {% if active_tab == 'cliente' %}
+                    <a href="{% url 'cadastros:lista-cliente' %}"> <button type="button" class="btn btn-danger">Cancelar</button></a>
+                {% else %}
+                    <a href="{% url 'cadastros:lista-vendedor' %}"> <button type="button" class="btn btn-danger">Cancelar</button></a>
+                {% endif %}
             </div>
         </form>
       </div>
