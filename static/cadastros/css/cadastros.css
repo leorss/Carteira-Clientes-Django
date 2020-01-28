@@ -46,3 +46,7 @@ a:link{
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 
+#map {
+	height: 500px;
+	width: 100%;
+}
