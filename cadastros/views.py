@@ -2,8 +2,11 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from rest_framework import viewsets
 from .models import Cliente, Vendedor
 from .forms import ClienteForm, VendedorForm
+from cadastros.serializers import ClienteSerializer, VendedorSerializer
+
 import math
 
 def calc_dist(lat1, lon1, lat2, lon2):
@@ -173,3 +176,13 @@ def editarVendedor(request, pk):
             return render(request, 'cadastros/editar_vendedor.html', {'form': form, 'vendedor': vendedor})
     elif (request.method == 'GET'):
         return render(request, 'cadastros/editar_vendedor.html', {'form': form, 'vendedor': vendedor})
+
+
+class ClienteViewSet(viewsets.ModelViewSet):
+    queryset = Cliente.objects.all()
+    serializer_class = ClienteSerializer
+
+
+class VendedorViewSet(viewsets.ModelViewSet):
+    queryset = Vendedor.objects.all()
+    serializer_class = VendedorSerializer
