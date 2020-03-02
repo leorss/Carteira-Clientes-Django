@@ -6,9 +6,9 @@ from cadastros import views
 
 
 # Routers provide an easy way of automatically determining the URL conf.
-router = routers.DefaultRouter()
-router.register('vendedor', VendedorViewSet)
-router.register('cliente', ClienteViewSet)
+# router = routers.DefaultRouter()
+# router.register('vendedor', VendedoresViewSet)
+# router.register('cliente', ClienteViewSet)
 
 
 urlpatterns = [
