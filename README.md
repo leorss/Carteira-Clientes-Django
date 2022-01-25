@@ -30,12 +30,6 @@ source ./venv/bin/activate
 pip install -r requirements.txt
 ```
 
-<h4 style="padding: 10px 0px">Alimentar base de dados<h4>
-
-```
-python populate.py
-```
-
 <h2 style="padding: 10px 0px">Execução</h2>
 
 <h4 style="padding: 10px 0px">Executar migrate<h4>
@@ -48,6 +42,12 @@ python manage.py migrate
 
 ```
 python manage.py createsuperuser
+```
+
+<h4 style="padding: 10px 0px">Alimentar base de dados<h4>
+
+```
+python populate.py
 ```
 
 <h4 style="padding: 10px 0px">Rodar servidor<h4>
