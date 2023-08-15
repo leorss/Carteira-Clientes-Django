@@ -1,85 +1,90 @@
-<h1 align="center"> Distribuição carteira de clientes para novos vendedores </h1>
+Distribuição carteira de clientes para novos vendedores
+=======================================================
+
 <div align="center">
   <img width="150" src="./static/cadastros/images/cerveja.png">
 </div>
-<h3> Este sistema tem por objetivo gerenciar e distribuir a carteira de clientes para os novos vendedores de acordo com a geolocalização. </h3>
-<hr> 
-<h2 style="padding: 10px 0px">Ambientação</h2>
 
-<h4>Criar ambiente virtual</h4>
+### Este sistema tem por objetivo gerenciar e distribuir a carteira de clientes para os novos vendedores de acordo com a geolocalização.
+
+* * *
+
+Ambientação
+-----------
+
+#### Criar ambiente virtual
 
 ```
 virtualenv venv
 ```
 
-<h4 style="padding: 10px 0px">Ativar ambiente virtual (Linux)<h4>
 
-```
-source ./venv/bin/activate
-```
+#### Ativar ambiente virtual (Linux)
 
-<h4 style="padding: 10px 0px">Ativar ambiente virtual (Windows)<h4>
-
-```
-./venv/bin/activate
+``` 
+source ./venv/bin/activate 
 ```
 
-<h4 style="padding: 10px 0px">Instalar requerimentos<h4>
+#### Ativar ambiente virtual (Windows)
 
-```
-pip install -r requirements.txt
-```
-
-<h2 style="padding: 10px 0px">Execução</h2>
-
-<h4 style="padding: 10px 0px">Executar migrate<h4>
-
-```
-python manage.py migrate
+``` 
+./venv/bin/activate 
 ```
 
-<h4 style="padding: 10px 0px">Criar super user<h4>
+#### Instalar requerimentos
 
+``` 
+pip install -r requirements.txt 
 ```
-python manage.py createsuperuser
+
+Execução
+--------
+
+#### Executar migrate
+
+``` 
+python manage.py migrate 
 ```
 
-<h4 style="padding: 10px 0px">Alimentar base de dados<h4>
+#### Criar super user
 
+``` 
+python manage.py createsuperuser 
+```
+
+#### Alimentar base de dados
 ```
 python populate.py
 ```
 
-<h4 style="padding: 10px 0px">Rodar servidor<h4>
+#### Rodar servidor
+
 
 ```
 python manage.py runserver
 ```
 
-<br>
-<hr>
+* * *
 
-<h2 style="padding: 10px 0px"> Visão Geral </h2>
+Visão Geral
+-----------
 
-<h3> Tela Login </h3>
-<img src="./static/cadastros/images/snapshots/login.jpg">
+### Tela Login
 
-<br>
+![](./static/cadastros/images/snapshots/login.jpg)  
 
-<h3> Tela Bem-vindo(a) </h3>
-<img src="./static/cadastros/images/snapshots/bem-vindo.jpg">
+### Tela Bem-vindo(a)
 
-<br>
+![](./static/cadastros/images/snapshots/bem-vindo.jpg)  
 
-<h3> Tela Clientes </h3>
-<img src="./static/cadastros/images/snapshots/cliente.jpg">
+### Tela Clientes
 
-<br>
+![](./static/cadastros/images/snapshots/cliente.jpg)  
 
-<h3> Tela Vendedores </h3>
-<img src="./static/cadastros/images/snapshots/vendedor.jpg">
+### Tela Vendedores
 
-<br>
+![](./static/cadastros/images/snapshots/vendedor.jpg)  
 
-<h3> Tela Edição </h3>
-<img src="./static/cadastros/images/snapshots/edição.jpg">
+### Tela Edição
+
+![](./static/cadastros/images/snapshots/edição.jpg)
