@@ -4,13 +4,6 @@ from django.urls import path
 from django.urls import include
 from cadastros import views
 
-
-# Routers provide an easy way of automatically determining the URL conf.
-# router = routers.DefaultRouter()
-# router.register('vendedor', VendedoresViewSet)
-# router.register('cliente', ClienteViewSet)
-
-
 urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', admin.site.urls),
