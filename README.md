@@ -8,6 +8,11 @@ Distribuição carteira de clientes para novos vendedores
 ### Este sistema tem por objetivo gerenciar e distribuir a carteira de clientes para os novos vendedores de acordo com a geolocalização.
 
 * * *
+Tecnologias
+-----------
+- Python
+- Django
+- SQL Lite
 
 Ambientação
 -----------
@@ -30,7 +35,7 @@ python -m virtualenv venv
 pip install -r requirements.txt
 ```
 
-Execução
+Instalação
 --------
 
 #### Executar migrate
@@ -45,10 +50,13 @@ python manage.py migrate
 python manage.py createsuperuser 
 ```
 
-#### Alimentar base de dados
+#### Popular base de dados
 ```
 python populate.py
 ```
+
+Execução
+--------
 
 #### Rodar servidor
 
@@ -57,21 +65,12 @@ python populate.py
 python manage.py runserver
 ```
 
-Popular base de dados
-```
-python populate.py
-```
-
-
-Acesso
------------
-
-Usuário
+Acesso Usuário
 ```
 http://127.0.0.1:8000
 ```
 
-Administrador
+Acesso Administrador
 ```
 http://127.0.0.1:8000/admin
 ```
