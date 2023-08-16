@@ -23,10 +23,7 @@ def populate_clientes(N=5):
         fake_lon = fakegen.longitude()
         Cliente.objects.get_or_create(razao_social=fake_nom, cnpj=fake_cnpj, latitude=fake_lat, longitude=fake_lon)[0]
 
-        print(fake_nom)
-        print(fake_cnpj)
-        print(fake_lat)
-        print(fake_lon)
+        print('Cliente: {0} - CNPJ: {1} - Coordenadas: {2}, {3}'.format(fake_nom, fake_cnpj, fake_lat, fake_lon))
 
 
 def populate_vendedores(N=5):
@@ -37,17 +34,22 @@ def populate_vendedores(N=5):
         fake_lon = fakegen.longitude()
         Vendedor.objects.get_or_create(razao_social=fake_nom, cpf=fake_cpf, latitude=fake_lat, longitude=fake_lon)[0]
 
-        print(fake_nom)
-        print(fake_cpf)
-        print(fake_lat)
-        print(fake_lon)
-
+        print('Vendedor: {0} - CPF: {1} - Coordenadas: {2}, {3}'.format(fake_nom, fake_cpf, fake_lat, fake_lon))
 
 if __name__ == '__main__':
 
     print("Populating the databases...Please Wait")
-    print("Clientes...")
+
+    print("-"*50)
+    print("Clientes")
+    print("-"*50)
+
     populate_clientes(100)
-    print("Vendedores...")
+
+    print("-"*50)
+    print("Vendedores")
+    print("-"*50)
+
     populate_vendedores(100)
+
     print('Populating Complete')
