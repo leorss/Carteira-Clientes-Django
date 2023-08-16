@@ -15,26 +15,19 @@ Ambientação
 #### Criar ambiente virtual
 
 ```
-virtualenv venv
-```
-
-
-#### Ativar ambiente virtual (Linux)
-
-``` 
-source ./venv/bin/activate 
+python -m virtualenv venv
 ```
 
 #### Ativar ambiente virtual (Windows)
 
 ``` 
-./venv/bin/activate 
+./venv/Scripts/activate
 ```
 
 #### Instalar requerimentos
 
 ``` 
-pip install -r requirements.txt 
+pip install -r requirements.txt
 ```
 
 Execução
@@ -62,6 +55,25 @@ python populate.py
 
 ```
 python manage.py runserver
+```
+
+Popular base de dados
+```
+python populate.py
+```
+
+
+Acesso
+-----------
+
+Usuário
+```
+http://127.0.0.1:8000
+```
+
+Administrador
+```
+http://127.0.0.1:8000/admin
 ```
 
 * * *
